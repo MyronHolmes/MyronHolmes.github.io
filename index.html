@@ -5,12 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="./stylesheet.css">
+    
 </head>
 <body>
-
-    <h1>Hello World</h1>
-    <p>My name is Myron </p>
-    <img src="./assests/images/profilephoto.png" alt="profile Photo">
+    <div class="flex-navbar">
+        <nav>
+        <a href="mailto:1dequanh@gmail.com"><img class="icon" src="./assests/icons/icons8-gmail-64.png" alt="Gmail Icon"></a>   
+        
+        <a href="https://github.com/MyronHolmes">
+            <img class="icon" src="./assests/icons/icons8-github-64.png" alt="Github Icon">
+        </a>
+        <a href="https://www.linkedin.com/in/myron-holmes/">
+            <img class="icon" src="./assests/icons/icons8-linkedin-50.png" alt="Linkedin Icon">
+        </a>
+    </nav>
+    </div>
+    
+    <h1>Myron Holmes</h1>
+    <div id="intro">
+        <img id="pp" src="./assests/images/profilephoto.png" alt="profile Photo">
+        <h2>Software Engineer</h2>
+    </div>
+    
+    <div class="container">
+        <div class="bio">
+            <h4>About</h4>
+            <p>Hello, my name is Myron Holmes and I am coding graduate from Devmountain's Java Software Engineering program.
+                From August 2020 to August 2021, I worked for Amazon Fulfillment Center as a Problem Solver. I soon after continued my tech journey by completed the Google IT Support Professional course through courser in March 2022. Later that same year I joined the Coding Basics bootcamp with Devmountain to gain knowledge and hands on experience in coding, which lead to me joining the Java Software Engineering bootcamp in January 2023.When im not coding I like to travel and dive into the artistic pool by painting and listening to music.</p>
+            <h5>Langues, Tools & Frameworks:</h5> 
+            <p>Java | HTML5 | CSS | JavaScript | PostgreSQL | MySQL | Node.js | Express | Spring | Bootstrap | Hibernate | Maven | Thymeleaf | JSON</p>
+            
+        </div>
+        <div class="projects">
+            <div class="single-project">
+                <img class="thumbnail" src="./assests/images/CBM Thumbnaik.png" alt="Cookbook Manager Thumbnail" >
+                <div class="links">
+                    <p class="a">Cookbook Manager:</p>
+                    <a class="a" href="https://www.youtube.com/watch?v=qUBWoKF-Kds">Demo</a>
+                    <a class="a" href="https://github.com/MyronHolmes/Foundations-Capston">Github</a>
+                </div>
+            </div>
+            
+            <div class="single-project">
+                <img class="thumbnail" src="./assests/images/PP Thumbnail.png" alt="Property Portal Thumbnail" >
+                <div class="links">
+                    <p class="a">Property Portal:</p>
+                    <a class="a" href="https://www.youtube.com/watch?v=VdTFwFF-Mds">Demo</a>
+                    <a class="a" href="https://github.com/MyronHolmes/Java-Capstone-Project">Github</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
  
     <script src="./index.js"></script>
 </body>
