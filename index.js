@@ -26,3 +26,9 @@ function githubPP(){
 function demoPP(){
   window.open('https://www.youtube.com/watch?v=VdTFwFF-Mds', '_blank')
 }
+function githubDW(){
+  window.open('https://github.com/MyronHolmes/dental-website', '_blank')
+}
+function demoDW(){
+  // window.open('https://www.youtube.com/watch?', '_blank')
+}
