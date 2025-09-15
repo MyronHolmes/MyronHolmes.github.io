@@ -17,19 +17,82 @@
           "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
           "Segoe UI Symbol", "Noto Color Emoji";
       }
+      #menu-btn.open .line:nth-child(1) {
+        transform: rotate(42deg) translate(1.5px, 9px);
+      }
+      #menu-btn.open .line:nth-child(2) {
+        opacity: 0;
+      }
+      #menu-btn.open .line:nth-child(3) {
+        transform: rotate(-42deg) translate(1.5px, -9px);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
   </head>
   <body class="overflow-x-hidden min-h-screen font-sans">
-    <div class="h-[3rem] bg-neutral-600"></div>
+    <nav
+      class="fixed top-0 left-0 w-full bg-neutral-500/30 backdrop-blur-md z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16"
+      >
+        <!-- Logo -->
+        <a href="#home" class="text-white font-semibold text-xl">MH</a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-6 text-white">
+          <a href="#home" class="hover:text-neutral-300 transition">Home</a>
+          <a href="#about" class="hover:text-neutral-300 transition">About</a>
+          <a href="#projects" class="hover:text-neutral-300 transition"
+            >Projects</a
+          >
+          <a href="#contact" class="hover:text-neutral-300 transition"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Hamburger Button -->
+        <button
+          id="menu-btn"
+          class="md:hidden flex flex-col gap-1.5 z-50 relative"
+        >
+          <span
+            class="line block w-6 h-0.5 bg-white transition-all duration-300"
+          ></span>
+          <span
+            class="line block w-6 h-0.5 bg-white transition-all duration-300"
+          ></span>
+          <span
+            class="line block w-6 h-0.5 bg-white transition-all duration-300"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="menu"
+        class="absolute top-16 left-0 w-full bg-neutral-800/90 backdrop-blur-md flex-col items-center gap-6 text-white py-6 transition-all duration-300 ease-in-out transform -translate-y-full opacity-0 md:hidden"
+      >
+        <a href="#home" class="hover:text-neutral-300 transition">Home</a>
+        <a href="#about" class="hover:text-neutral-300 transition">About</a>
+        <a href="#projects" class="hover:text-neutral-300 transition"
+          >Projects</a
+        >
+        <a href="#contact" class="hover:text-neutral-300 transition">Contact</a>
+      </div>
+    </nav>
+
+    <div class="h-[3rem] bg-neutral-800"></div>
     <div
+      id="home"
       class="bg-neutral-950 h-3/4 flex flex-col md:flex-row items-center justify-center gap-8 p-6 md:p-12 sm:h-[500px] md:h-[600px]"
     >
       <div
         class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border border-neutral-500 bg-[url('/assets/profilephoto.png')] bg-cover bg-center"
       ></div>
-      <div
-        class="flex flex-col items-center"
-      >
+      <div class="flex flex-col items-center">
         <p class="text-neutral-400 text-lg sm:text-xl md:text-2xl">
           Hello, I'm
         </p>
@@ -53,7 +116,60 @@
             Contact Info
           </button>
         </div>
+        <div class="flex justify-content-center mt-3">
+          <a
+            href="https://www.linkedin.com/in/myron-holmes/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-7 h-7 bg-white border border-white mr-1 rounded-full bg-[url('/assets/li3.png')] bg-cover bg-center block transition-transform duration-200 hover:scale-110"
+          ></a>
+          <a
+            href="https://github.com/MyronHolmes"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-7 h-7 ml-1 rounded-full bg-[url('/assets/github-mark-white.png')] bg-cover bg-center block transition-transform duration-200 hover:scale-110"
+          ></a>
+        </div>
       </div>
     </div>
+    <div
+      id="about"
+      class="bg-neutral-100 text-neutral-500 my-5 flex flex-col items-center min-h-[400px] sm:h-[500px] md:h-[700px]"
+    >
+      <div class="justify-items-center py-5">
+        <p class="sm:text-xl">Get To Know More</p>
+        <h1 class="text-3xl font-medium text-neutral-950 sm:text-5xl">
+          About Me
+        </h1>
+      </div>
+      <div class="flex flex-col items-center sm:flex-row w-full p-3">
+        <div class="justify-self-center ml-1 rounded-lg">
+          <img
+            src="assets/devmountain.png"
+            alt="Devmountain Certification"
+            class="rounded-xl shadow-xl/20"
+          />
+        </div>
+        <p
+          class="text-center pt-5 leading-relaxed text-neutral-700 sm:w-3/5 sm:ml-3 sm:pl-3 sm:text-left sm:border-l-2 sm:border-neutral-950"
+        >
+          Hi, I’m
+          <span class="font-semibold text-neutral-900">Myron Holmes</span>—a
+          software developer based in Charleston, SC. <br /><br />
+          My journey into tech began in 2023 at
+          <span class="font-semibold">Devmountain</span>, where I built my first
+          two full-stack projects: one with vanilla JavaScript and another with
+          Java. Since then, I’ve expanded my skills into modern frameworks like
+          <span class="font-semibold">Svelte, React, and Python</span>, while
+          deepening my backend expertise. <br /><br />
+          I enjoy bringing ideas to life through clean, efficient code and
+          intuitive user experiences. My toolkit spans
+          <span class="font-semibold"
+            >Java, TypeScript, Spring Boot, SvelteKit, Angular, PostgreSQL</span
+          >, and more.
+        </p>
+      </div>
+    </div>
+    <script src="index.js"></script>
   </body>
 </html>
