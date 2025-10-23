@@ -32,3 +32,9 @@ function githubDW(){
 function demoDW(){
   window.open('https://www.youtube.com/watch?v=lJkTsjZb12w', '_blank')
 }
+function githubIM(){
+  window.open('https://github.com/MyronHolmes/inventory-manager', '_blank')
+}
+function demoIM(){
+  window.open('https://surplus-depot.vercel.app/', '_blank')
+}
