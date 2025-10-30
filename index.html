@@ -5,13 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Myron Holmes | Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="icon" type="image/png" href="/assets/profilephoto.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
+      href="/assets/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/android-chrome-512x512.png"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
     <style type="text/tailwindcss">
@@ -41,15 +67,19 @@
   <body class="overflow-x-hidden min-h-screen font-sans bg-neutral-50">
     <!-- Navbar -->
     <nav
-      class="fixed top-0 left-0 w-full bg-neutral-800/10 backdrop-blur-md z-50"
+      class="fixed top-0 left-0 w-full bg-neutral-900/70 backdrop-blur-md z-50"
     >
       <div
         class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16"
       >
         <!-- Logo -->
         <a href="#home" class="text-white font-bold text-2xl tracking-tight"
-          >&ltMH /&gt</a
-        >
+          ><img
+            src="assets/MyLogo.png"
+            alt="Logo"
+            class="w-15 h-15 sm:w-20 sm:h-20 md:w-25 md:h-25 object-contain"
+          />
+        </a>
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex gap-6 text-white">
@@ -110,44 +140,36 @@
         </h1>
         <p class="text-neutral-200 text-lg sm:text-xl">Software Developer</p>
 
-        <div class="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
+        <div class="flex flex-wrap gap-4 mt-6 justify-center items-center md:justify-start">
           <button
             class="px-5 py-2 rounded-full border border-white text-white shadow-xl/20 hover:cursor-pointer hover:text-cyan-400 hover:border-cyan-400 hover:scale-105 font-semibold transition"
-          >
+            onclick="NewTabRes()"
+            >
             Resume
           </button>
-          <button
-            class="px-5 py-2 rounded-full border border-white text-white shadow-xl/20 hover:cursor-pointer hover:text-cyan-400 hover:border-cyan-400 hover:scale-105 font-semibold transition"
+          <a
+            href="https://linkedin.com/in/yourprofile"
+            target="_blank"
+            class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
           >
-            Contact Info
-          </button>
-        </div>
-
-        <div class="flex justify-center md:justify-start mt-5 space-x-4">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
           <a
-            href="https://www.linkedin.com/in/myron-holmes/"
+            href="https://github.com/in/yourprofile"
             target="_blank"
-            rel="noopener noreferrer"
-            class="w-8 h-8 sm:w-9 sm:h-9 bg-[url('/assets/li3.png')] bg-white border-white bg-cover bg-center rounded-full hover:scale-110 transition-transform"
-          ></a>
-          <a
-            href="https://github.com/MyronHolmes"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="w-8 h-8 sm:w-9 sm:h-9 bg-[url('/assets/github-mark-white.png')] bg-cover bg-center rounded-full hover:scale-110 transition-transform"
-          ></a>
+            class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section
-      id="about"
-      class="bg-white text-neutral-700 py-12 mx-4"
-    >
-      <div class="rounded-lg bg-neutral-100 p-5 ">
+    <section id="about" class="bg-white text-neutral-700 py-12 mx-4">
+      <div class="rounded-lg bg-neutral-200/60 p-5">
         <div class="text-center mb-8">
-          <p class="text-sky-600 font-medium text-lg">Get To Know More</p>
+          <p class="text-cyan-500 font-medium text-lg">Get To Know More</p>
           <h2 class="text-4xl font-bold text-neutral-900">About Me</h2>
         </div>
 
@@ -189,8 +211,8 @@
       class="bg-gradient-to-r from-sky-600 to-indigo-600 text-white py-12 flex flex-col items-center px-4"
     >
       <div class="text-center mb-8">
-        <p class="text-xl font-medium text-white/90">Browse My Recent</p>
-        <h2 class="text-4xl font-bold">Projects</h2>
+        <p class="text-xl font-medium text-cyan-500">Browse My Recent</p>
+        <h2 class="text-4xl font-bold text-white">Projects</h2>
       </div>
 
       <div
@@ -198,75 +220,170 @@
       >
         <!-- Project Card -->
         <div
-          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg hover:scale-[1.02] transition-transform"
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
           <img
-            src="assets/devmountain.png"
-            alt="Inventory Manager"
+            src="assets/Inventory Manager-1.png"
+            alt="Inventory Manager Thumbnail"
             class="rounded-lg w-full"
           />
           <h3 class="text-xl mt-4 font-semibold">Inventory Manager</h3>
           <p class="text-sm mb-3">
-            Fullstack project built with Svelte + PostgREST
+            Fullstack project built with React + Vue + TailwindCSS + Express.js
+            + Node.js + PostgreSQL - Inventory management system designed to
+            help businesses track products and monitor stock levels with
+            role-based access control.
           </p>
           <div class="flex gap-3">
             <button
-              class="bg-white text-sky-700 px-4 py-2 rounded-lg font-semibold"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Live Demo
             </button>
             <button
-              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
             </button>
           </div>
         </div>
 
-        <!-- Repeat for others -->
         <div
-          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg hover:scale-[1.02] transition-transform"
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
           <img
             src="assets/DW Thumbnail.png"
-            alt="Dental Website"
+            alt="Dental Website Thumbnail"
             class="rounded-lg w-full"
           />
           <h3 class="text-xl mt-4 font-semibold">Dental Website</h3>
-          <p class="text-sm mb-3">SvelteKit + Tailwind responsive design</p>
+          <p class="text-sm mb-3">
+            SvelteKit + TailwindCSS - Dynamic web app for a potential dental
+            business with a responsive design.
+          </p>
           <div class="flex gap-3">
             <button
-              class="bg-white text-sky-700 px-4 py-2 rounded-lg font-semibold"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Video Demo
             </button>
             <button
-              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
             </button>
           </div>
         </div>
 
-        <!-- Add the other two here... -->
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
+          <img
+            src="assets/PP Thumbnail.png"
+            alt="Property Portal Thumbnail"
+            class="rounded-lg w-full"
+          />
+          <h3 class="text-xl mt-4 font-semibold">Property Portal</h3>
+          <p class="text-sm mb-3">
+            Java + Spring + Hibernate + HTML5 + CSS + Bootstrap + JavaScript +
+            PostgreSQL - This project allows the user to keep track of the
+            properties that they own as well as the buildings and units that
+            that are associated with each property.
+          </p>
+          <div class="flex gap-3">
+            <button
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Video Demo
+            </button>
+            <button
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
+          <img
+            src="assets/CBM Thumbnaik.png"
+            alt="CBM Thumbnail"
+            class="rounded-lg w-full"
+          />
+          <h3 class="text-xl mt-4 font-semibold">Cookbook Manager</h3>
+          <p class="text-sm mb-3">
+            JavaScript + CSS + HTML5 + Express.js + Node.js + PostgreSQL - This
+            project will allow the user to keep track of recipes in one place
+            and give the user the option to add ingredients from those recipes
+            to a shopping list.
+          </p>
+          <div class="flex gap-3">
+            <button
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Video Demo
+            </button>
+            <button
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+        <!-- Add the others here... -->
       </div>
     </section>
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- Contact Section -->
-    <section
-      id="contact"
-      class="bg-neutral-100 text-neutral-800 py-12 flex flex-col items-center px-4"
-    >
-      <div class="text-center mb-8">
-        <p class="text-lg text-sky-600">Don’t Be Shy</p>
-        <h2 class="text-4xl font-bold">Contact Me</h2>
-      </div>
-      <p class="text-center max-w-xl">
-        I'm always open to discussing new opportunities, projects, or
-        collaborations. Let's connect!
-      </p>
-    </section>
+    <section id="contact" class="bg-white text-neutral-800 py-12 px-4">
+      <div
+        class="rounded-lg bg-neutral-200/60 p-8 flex flex-col items-center text-center"
+      >
+        <p class="text-lg text-cyan-500 mb-2">Don’t Be Shy</p>
+        <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
+        <p class="max-w-xl mb-6">
+          I'm always open to discussing new opportunities, projects, or
+          collaborations. Let's connect!
+        </p>
 
+        <!-- Contact Icons -->
+        <div class="flex gap-6 mb-8">
+          <a
+            href="mailto:1dequanh@email.com"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://twitter.com/MyronHolmes"
+            target="_blank"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/myron-holmes/"
+            target="_blank"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="h-[3rem] flex flex-col items-center p-3 bg-linear-to-r from-sky-300 to-indigo-900"
+    >
+      <p>© 2025 Myron Holmes</p>
+    </footer>
     <script>
       const menuBtn = document.getElementById("menu-btn");
       const menu = document.getElementById("menu");
