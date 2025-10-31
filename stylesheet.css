@@ -14,6 +14,35 @@ body {
 html {
   scroll-behavior: smooth;
 }
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hamburger Animation */
+#menu-btn.open .line:nth-child(1) {
+  @apply rotate-45 translate-x-[6px] translate-y-[12px];
+}
+#menu-btn.open .line:nth-child(2) {
+  @apply opacity-0;
+}
+#menu-btn.open .line:nth-child(3) {
+  @apply -rotate-45 translate-x-[6px] -translate-y-[10px];
+}
+
+/* Mobile menu transitions */
+#menu {
+  @apply transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+}
+
+#menu.open {
+  @apply translate-y-0 opacity-100 pointer-events-auto;
+}
 
 p {
   color: rgb(85, 85, 85);
@@ -168,9 +197,8 @@ section {
   gap: 5rem;
   height: 80vh;
   border-bottom: solid rgb(53, 53, 53) 2px;
-
 }
-#pp{
+#pp {
   border-radius: 50% 50%;
   border: black solid 1px;
 }
@@ -322,8 +350,8 @@ section {
   margin: auto 0;
 }
 
-.text-container{
-  border-left:  rgb(53, 53, 53) solid 2px;
+.text-container {
+  border-left: rgb(53, 53, 53) solid 2px;
   padding-left: 15px;
   margin-left: 25px;
 }
@@ -373,7 +401,7 @@ article .icon {
   position: relative;
   margin-top: 100px;
 }
-.projects-container{
+.projects-container {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;

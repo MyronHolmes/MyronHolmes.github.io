@@ -2,542 +2,370 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="stylesheet.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <title>Myron Holmes | Portfolio</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="16x16 32x32 48x48"
+      href="/assets/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="assets/android-chrome-512x512.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Myron Holmes</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+
+  <body class="overflow-x-hidden min-h-screen font-sans bg-neutral-50">
+    <!-- Navbar -->
+    <nav
+      class="fixed top-0 left-0 w-full bg-neutral-900/70 backdrop-blur-md z-50"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 flex justify-between items-center h-16"
+      >
+        <!-- Logo -->
+        <a href="#home" class="text-white font-bold text-2xl tracking-tight"
+          ><img
+            src="assets/MyLogo.png"
+            alt="Logo"
+            class="w-15 h-15 sm:w-20 sm:h-20 md:w-25 md:h-25 object-contain"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex gap-6 text-white">
+          <a href="#home" class="hover:text-sky-300 transition">Home</a>
+          <a href="#about" class="hover:text-sky-300 transition">About</a>
+          <a href="#projects" class="hover:text-sky-300 transition">Projects</a>
+          <a href="#contact" class="hover:text-sky-300 transition">Contact</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button
+          id="menu-btn"
+          class="md:hidden flex flex-col justify-between w-7 h-6 focus:outline-none"
+        >
+          <span
+            class="line block h-0.5 bg-white transition-all duration-300"
+          ></span>
+          <span
+            class="line block h-0.5 bg-white transition-all duration-300"
+          ></span>
+          <span
+            class="line block h-0.5 bg-white transition-all duration-300"
+          ></span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="menu"
+        class="absolute top-16 left-0 w-full bg-neutral-900/95 flex flex-col items-center gap-6 py-6 text-white md:hidden"
+      >
+        <a href="#home" class="hover:text-sky-300 transition">Home</a>
+        <a href="#about" class="hover:text-sky-300 transition">About</a>
+        <a href="#projects" class="hover:text-sky-300 transition">Projects</a>
+        <a href="#contact" class="hover:text-sky-300 transition">Contact</a>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Myron Holmes</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img id="pp" src="./assests/profilephoto.png" alt="Myron Holmes profile picture" />
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Myron Holmes</h1>
-        <p class="section__text__p2">Software Developer</p>
-        <div class="btn-container">
+
+    <!-- Spacer for Navbar -->
+    <div class="h-[3rem] bg-linear-to-r from-sky-400 to-indigo-400"></div>
+
+    <!-- Hero Section -->
+    <div></div>
+    <section
+      id="home"
+      class="min-h-[80vh] bg-gradient-to-r from-sky-500 to-indigo-500 flex flex-col md:flex-row items-center justify-center gap-8 p-6 text-center md:text-left"
+    >
+      <div
+        class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 rounded-full border-4 border-white bg-[url('/assets/profilephoto.png')] bg-cover bg-center shadow-xl"
+      ></div>
+
+      <div class="flex flex-col items-center">
+        <p class="text-neutral-100 text-lg sm:text-xl">Hello, I'm</p>
+        <h1
+          class="text-white font-extrabold text-4xl sm:text-5xl md:text-5xl lg:text-7xl"
+        >
+          Myron Holmes
+        </h1>
+        <p class="text-neutral-200 text-lg sm:text-xl">Software Developer</p>
+
+        <div
+          class="flex flex-wrap gap-4 mt-6 justify-center items-center md:justify-start"
+        >
           <button
-            class="btn btn-color-2"
-            id="resume"
             onclick="newTabRes()"
+            class="px-5 py-2 rounded-full border border-white text-white shadow-xl/20 hover:cursor-pointer hover:text-cyan-400 hover:border-cyan-400 hover:scale-105 font-semibold transition"
           >
             Resume
           </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assests/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="newTabLI()"
-          />
-          <img
-            src="./assests/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="newTabGH()"
-          />
+          <a
+            href="https://www.linkedin.com/in/myron-holmes/"
+            target="_blank"
+            class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/MyronHolmes"
+            target="_blank"
+            class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
+
+    <!-- About Section -->
+    <section id="about" class="bg-white text-neutral-700 py-12 mx-4">
+      <div class="rounded-lg bg-neutral-200/60 p-5">
+        <div class="text-center mb-8">
+          <p class="text-cyan-500 font-medium text-lg">Get To Know More</p>
+          <h2 class="text-4xl font-bold text-neutral-900">About Me</h2>
+        </div>
+
+        <div
+          class="flex flex-col md:flex-row items-center gap-8 max-w-6xl w-full"
+        >
+          <div class="md:border-r md:pr-5">
+            <img
+              src="assets/devmountain.png"
+              alt="Devmountain Certification"
+              class="w-64 sm:w-72 md:w-80 rounded-xl shadow-lg"
+            />
+          </div>
+          <p
+            class="text-center md:text-left text-base sm:text-lg leading-relaxed md:w-3/5"
+          >
+            Hi, I’m
+            <span class="font-semibold text-neutral-900">Myron Holmes</span> — a
+            software developer based in Charleston, SC. My journey into tech
+            began in 2023 at <span class="font-semibold">Devmountain</span>,
+            where I built my first full-stack projects. Since then, I’ve
+            expanded into modern frameworks like
+            <span class="font-semibold">Svelte, React, and Python</span> while
+            deepening my backend expertise. <br /><br />
+            I love bringing ideas to life through clean, efficient code and
+            intuitive user experiences. My toolkit spans
+            <span class="font-semibold"
+              >Java, TypeScript, Spring Boot, SvelteKit, Angular,
+              PostgreSQL</span
+            >, and more.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="bg-gradient-to-r from-sky-600 to-indigo-600 text-white py-12 flex flex-col items-center px-4"
+    >
+      <div class="text-center mb-8">
+        <p class="text-xl font-medium text-cyan-500">Browse My Recent</p>
+        <h2 class="text-4xl font-bold text-white">Projects</h2>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl w-full"
+      >
+        <!-- Project Cards -->
+
+        <!-- Inventory Manager -->
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
           <img
-            src="./assests/Myron Holmes Devmountain png.png"
-            alt="Profile picture"
-            class="about-pic"
+            src="assets/Inventory Manager.png"
+            alt="Inventory Manager Thumbnail"
+            class="rounded-lg w-full"
           />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-          <div class="text-container">
-            <p>
-              Hello, my name is Myron Holmes and I am coding graduate from Devmountain's Java Software Engineering program.
-                From August 2020 to August 2021, I worked for Amazon Fulfillment Center as a Problem Solver. I soon after continued my tech journey by completed the Google IT Support Professional course through coursera in March 2022. Later that same year I joined the Coding Basics bootcamp with Devmountain to gain knowledge and hands on experience in coding, which lead to me joining the Java Software Engineering bootcamp in January 2023. When im not coding I like to travel and dive into the artistic pool by painting and listening to music.
-            </p>
+          <h3 class="text-xl mt-4 font-semibold">Inventory Manager</h3>
+          <p class="text-sm mb-3">
+            Fullstack project built with React + Vue + TailwindCSS + Express.js
+            + Node.js + PostgreSQL - Inventory management system designed to
+            help businesses track products and monitor stock levels with
+            role-based access control.
+          </p>
+          <div class="flex gap-3">
+            <button
+              onclick="demoIM()"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Live Demo
+            </button>
+            <button
+              onclick="githubIM()"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
           </div>
         </div>
-      </div>
-      <img
-        src="./assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-    </section>
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Development Skills</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>HTML</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>CSS</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JavaScript</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>TypeScript</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Svelte</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AG Grid</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Angular</h3>
-                </div>
-              </article>
-               <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>React</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Node.js</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Express</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>JSON</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Bootstrap</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Java</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Spring</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Hibernate</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Maven</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Thymeleaf</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>PostgreSQL</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>MySQL</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Development Tools</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Github</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Postman</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Visual Studio Code</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Vercel</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Render</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Supabase</h3>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assests/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3> Intellij IDEA</h3>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="projects-container">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assests/Inventory Manager.png"
-                alt="Inventory Manager"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Inventory Manager</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="githubIM()"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="demoIM()"
-              >
-                Live App
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assests/DW Thumbnail.png"
-                alt="Dental Website"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Dental Website</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="githubDW()"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="demoDW()"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assests/CBM Thumbnaik.png"
-                alt="Cookbook Manager"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Cookbook Manager</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="githubCBM()"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="demoCBM()"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assests/PP Thumbnail.png"
-                alt="Property Portal"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Property Portal</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="githubPP()"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="demoPP()"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assests/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
+        <!-- Dental Website -->
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
           <img
-            src="./assests/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
+            src="assets/DW Thumbnail.png"
+            alt="Dental Website Thumbnail"
+            class="rounded-lg w-full"
           />
-          <p><a href="mailto:1dequanh@gmail.com">1dequanh@gmail.com</a></p>
+          <h3 class="text-xl mt-4 font-semibold">Dental Website</h3>
+          <p class="text-sm mb-3">
+            SvelteKit + TailwindCSS - Dynamic web app for a potential dental
+            business with a responsive design.
+          </p>
+          <div class="flex gap-3">
+            <button
+              onclick="demoDW()"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Video Demo
+            </button>
+            <button
+              onclick="githubDW()"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
+          </div>
         </div>
-        <div class="contact-info-container">
+        <!-- Property Portal -->
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
           <img
-            src="./assests/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
+            src="assets/PP Thumbnail.png"
+            alt="Property Portal Thumbnail"
+            class="rounded-lg w-full"
           />
-          <p class="a" onclick="newTabLI()">LinkedIn</p>
+          <h3 class="text-xl mt-4 font-semibold">Property Portal</h3>
+          <p class="text-sm mb-3">
+            Java + Spring + Hibernate + HTML5 + CSS + Bootstrap + JavaScript +
+            PostgreSQL - This project allows the user to keep track of the
+            properties that they own as well as the buildings and units that
+            that are associated with each property.
+          </p>
+          <div class="flex gap-3">
+            <button
+              onclick="demoPP()"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Video Demo
+            </button>
+            <button
+              onclick="githubPP()"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+        <!-- Cookbook Manager -->
+        <div
+          class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
+        >
+          <img
+            src="assets/CBM Thumbnaik.png"
+            alt="CBM Thumbnail"
+            class="rounded-lg w-full"
+          />
+          <h3 class="text-xl mt-4 font-semibold">Cookbook Manager</h3>
+          <p class="text-sm mb-3">
+            JavaScript + CSS + HTML5 + Express.js + Node.js + PostgreSQL - This
+            project will allow the user to keep track of recipes in one place
+            and give the user the option to add ingredients from those recipes
+            to a shopping list.
+          </p>
+          <div class="flex gap-3">
+            <button
+              onclick="demoCBM()"
+              class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              Video Demo
+            </button>
+            <button
+              onclick="githubCBM()"
+              class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
+            >
+              GitHub
+            </button>
+          </div>
+        </div>
+        <!-- Add the others here... -->
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white text-neutral-800 py-12 px-4">
+      <div
+        class="rounded-lg bg-neutral-200/60 p-8 flex flex-col items-center text-center"
+      >
+        <p class="text-lg text-cyan-500 mb-2">Don’t Be Shy</p>
+        <h2 class="text-4xl font-bold mb-4">Contact Me</h2>
+        <p class="max-w-xl mb-6">
+          I'm always open to discussing new opportunities, projects, or
+          collaborations. Let's connect!
+        </p>
+
+        <!-- Contact Icons -->
+        <div class="flex gap-6 mb-8">
+          <a
+            href="mailto:1dequanh@email.com"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a
+            href="https://twitter.com/MyronHolmes123"
+            target="_blank"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/myron-holmes/"
+            target="_blank"
+            class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
       </div>
     </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>&#169; Myron Holmes 2025</p>
+    <footer
+      class="h-[3rem] flex flex-col items-center p-3 bg-linear-to-r from-sky-300 to-indigo-900"
+    >
+      <p>© 2025 Designed By Myron Holmes</p>
     </footer>
     <script src="index.js"></script>
   </body>
