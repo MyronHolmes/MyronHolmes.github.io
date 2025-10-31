@@ -3,22 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.getElementById("menu");
 
   menuBtn.addEventListener("click", () => {
+    console.log("hamburger clicked");
     menuBtn.classList.toggle("open");
-
-    if (menu.classList.contains("-translate-y-full")) {
-      menu.classList.remove("-translate-y-full", "opacity-0");
-      menu.classList.add("translate-y-0", "opacity-100", "flex");
-    } else {
-      menu.classList.add("-translate-y-full", "opacity-0");
-      menu.classList.remove("translate-y-0", "opacity-100", "flex");
-    }
+    menu.classList.toggle("open");
   });
 
   // Close menu on link click
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      menu.classList.add("-translate-y-full", "opacity-0");
-      menu.classList.remove("translate-y-0", "opacity-100", "flex");
+      menu.classList.remove("open");
       menuBtn.classList.remove("open");
     });
   });
@@ -27,9 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function newTabRes() {
   window.open(
-    "https://docs.google.com/document/d/1PZ965xA8bNEQguxY3xk85X_gQKZZ3v5JxX1Zq72HRCA/edit?usp=sharing",
+    "https://docs.google.com/document/d/1kUGYwqcFJn1T5OuyaQwlaQiuRbspJMGAdPF12TkjOFg/edit?usp=sharing",
     "_blank"
   );
+}
+function newTabLI() {
+  window.open("https://www.linkedin.com/in/myron-holmes/", "_blank");
 }
 function newTabLI() {
   window.open("https://www.linkedin.com/in/myron-holmes/", "_blank");
@@ -54,4 +50,10 @@ function githubDW() {
 }
 function demoDW() {
   window.open("https://www.youtube.com/watch?v=lJkTsjZb12w", "_blank");
+}
+function githubIM() {
+  window.open("https://github.com/MyronHolmes/inventory-manager", "_blank");
+}
+function demoIM() {
+  window.open("https://surplus-depot.vercel.app/login", "_blank");
 }

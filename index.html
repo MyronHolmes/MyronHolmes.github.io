@@ -53,13 +53,22 @@
 
       /* Hamburger Animation */
       #menu-btn.open .line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
+        @apply rotate-45 translate-x-[6px] translate-y-[12px];
       }
       #menu-btn.open .line:nth-child(2) {
-        opacity: 0;
+        @apply opacity-0;
       }
       #menu-btn.open .line:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
+        @apply -rotate-45 translate-x-[6px] -translate-y-[10px];
+      }
+
+      /* Mobile menu transitions */
+      #menu {
+        @apply transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+      }
+
+      #menu.open {
+        @apply translate-y-0 opacity-100 pointer-events-auto;
       }
     </style>
   </head>
@@ -109,7 +118,7 @@
       <!-- Mobile Menu -->
       <div
         id="menu"
-        class="absolute top-16 left-0 w-full bg-neutral-900/95 flex flex-col items-center gap-6 py-6 text-white transition-all duration-300 ease-in-out transform -translate-y-full opacity-0 md:hidden"
+        class="absolute top-16 left-0 w-full bg-neutral-900/95 flex flex-col items-center gap-6 py-6 text-white md:hidden"
       >
         <a href="#home" class="hover:text-sky-300 transition">Home</a>
         <a href="#about" class="hover:text-sky-300 transition">About</a>
@@ -140,22 +149,24 @@
         </h1>
         <p class="text-neutral-200 text-lg sm:text-xl">Software Developer</p>
 
-        <div class="flex flex-wrap gap-4 mt-6 justify-center items-center md:justify-start">
+        <div
+          class="flex flex-wrap gap-4 mt-6 justify-center items-center md:justify-start"
+        >
           <button
+            onclick="newTabRes()"
             class="px-5 py-2 rounded-full border border-white text-white shadow-xl/20 hover:cursor-pointer hover:text-cyan-400 hover:border-cyan-400 hover:scale-105 font-semibold transition"
-            onclick="NewTabRes()"
-            >
+          >
             Resume
           </button>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/myron-holmes/"
             target="_blank"
             class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
           >
             <i class="fa-brands fa-linkedin"></i>
           </a>
           <a
-            href="https://github.com/in/yourprofile"
+            href="https://github.com/MyronHolmes"
             target="_blank"
             class="text-white hover:text-cyan-400 text-3xl transition-colors duration-200 hover:scale-110"
           >
@@ -218,7 +229,9 @@
       <div
         class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl w-full"
       >
-        <!-- Project Card -->
+        <!-- Project Cards -->
+
+        <!-- Inventory Manager -->
         <div
           class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
@@ -236,18 +249,20 @@
           </p>
           <div class="flex gap-3">
             <button
+              onclick="demoIM()"
               class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Live Demo
             </button>
             <button
+              onclick="githubIM()"
               class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
             </button>
           </div>
         </div>
-
+        <!-- Dental Website -->
         <div
           class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
@@ -263,18 +278,20 @@
           </p>
           <div class="flex gap-3">
             <button
+              onclick="demoDW()"
               class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Video Demo
             </button>
             <button
+              onclick="githubDW()"
               class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
             </button>
           </div>
         </div>
-
+        <!-- Property Portal -->
         <div
           class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
@@ -292,18 +309,20 @@
           </p>
           <div class="flex gap-3">
             <button
+              onclick="demoPP()"
               class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Video Demo
             </button>
             <button
+              onclick="githubPP()"
               class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
             </button>
           </div>
         </div>
-
+        <!-- Cookbook Manager -->
         <div
           class="bg-white/10 p-4 rounded-xl backdrop-blur-lg border border-black/10 hover:scale-[1.02] hover:border-white transition-transform"
         >
@@ -321,11 +340,13 @@
           </p>
           <div class="flex gap-3">
             <button
+              onclick="demoCBM()"
               class="bg-white text-sky-700 border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               Video Demo
             </button>
             <button
+              onclick="githubCBM()"
               class="bg-transparent border border-white px-4 py-2 rounded-lg font-semibold hover:cursor-pointer hover:border-cyan-400 hover:text-cyan-400"
             >
               GitHub
@@ -335,12 +356,6 @@
         <!-- Add the others here... -->
       </div>
     </section>
-
-    <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
 
     <!-- Contact Section -->
     <section id="contact" class="bg-white text-neutral-800 py-12 px-4">
@@ -363,7 +378,7 @@
             <i class="fa-solid fa-envelope"></i>
           </a>
           <a
-            href="https://twitter.com/MyronHolmes"
+            href="https://twitter.com/MyronHolmes123"
             target="_blank"
             class="text-neutral-700 hover:text-cyan-500 text-2xl transition-colors duration-200"
           >
@@ -382,18 +397,8 @@
     <footer
       class="h-[3rem] flex flex-col items-center p-3 bg-linear-to-r from-sky-300 to-indigo-900"
     >
-      <p>© 2025 Myron Holmes</p>
+      <p>© 2025 Designed By Myron Holmes</p>
     </footer>
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const menu = document.getElementById("menu");
-
-      menuBtn.addEventListener("click", () => {
-        menuBtn.classList.toggle("open");
-        const isOpen = menuBtn.classList.contains("open");
-        menu.style.transform = isOpen ? "translateY(0)" : "translateY(-100%)";
-        menu.style.opacity = isOpen ? "1" : "0";
-      });
-    </script>
+    <script src="index.js"></script>
   </body>
 </html>
