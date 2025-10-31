@@ -39,6 +39,35 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <style type="text/tailwindcss">
+      /* Hamburger Animation */
+      #menu-btn.open .line:nth-child(1) {
+        @apply rotate-45 translate-x-[6px] translate-y-[12px];
+      }
+      #menu-btn.open .line:nth-child(2) {
+        @apply opacity-0;
+      }
+      #menu-btn.open .line:nth-child(3) {
+        @apply -rotate-45 translate-x-[6px] -translate-y-[10px];
+      }
+
+      /* Mobile menu transitions */
+      #menu {
+        @apply transform -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-in-out;
+      }
+
+      #menu.open {
+        @apply translate-y-0 opacity-100 pointer-events-auto;
+      }
+
+      /* Menu interactivity */
+      #menu {
+        pointer-events: none;
+      }
+      #menu.open {
+        pointer-events: auto;
+      }
+    </style>
   </head>
 
   <body class="overflow-x-hidden min-h-screen font-sans bg-neutral-50">
