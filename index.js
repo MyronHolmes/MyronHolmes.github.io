@@ -57,3 +57,10 @@ function githubIM() {
 function demoIM() {
   window.open("https://surplus-depot.vercel.app/login", "_blank");
 }
+function githubRLP() {
+  window.open("https://github.com/MyronHolmes/restaurant-landing", "_blank");
+}
+function demoRLP() {
+  window.open("https://github.com/MyronHolmes/restaurant-landing/blob/main/README.md#-live-demo", "_blank");
+}
+
